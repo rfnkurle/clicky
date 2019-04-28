@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "image": "Barret-FFVIIArt.png",
+      "clicked": false
+    },
+    {
+      "id": 2,
+      "image": "CidHighwind-FFVIIArt.png",
+      "clicked": false
+    },
+    {
+      "id": 3,
+      "image": "Cloud-FFVIIArt.png",
+      "clicked": false
+    },
+    {
+      "id": 4,
+      "image": "Tifa-d012ff-artwork.png",
+      "clicked": false
+    },
+    {
+      "id": 5,
+      "image": "Yuffie-FFVIIArt.png",
+      "clicked": false
+    },
+    {
+      "id": 6,
+      "image": "Vincent-FFVIIArt.png",
+      "clicked": false
+    },
+    {
+      "id": 7,
+      "image": "TBal.jpg",
+      "clicked": false
+    },
+    {
+      "id": 8,
+      "image": "Sephiroth-FFVIIArt.png",
+      "clicked": false
+    },
+    {
+      "id": 9,
+      "image": "RedXIII-FFVIIArt.png",
+      "clicked": false
+    },
+    {
+      "id": 10,
+      "image": "CaitSith-FFVIIArt.png",
+      "clicked": false
+    },
+    {
+      "id": 11,
+      "image": "",
+      "clicked": false
+    },
+    {
+      "id": 12,
+      "image": "Aeris-FFVIIArt.png",
+      "clicked": false
+    }
+  ]
