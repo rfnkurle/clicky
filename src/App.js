@@ -8,7 +8,7 @@ import matches from "./Cards.json";
 
 let correctGuesses = 0;
 let bestScore = 0;
-let clickMessage = "Click on an image to earn points, but don't click on any of them more than once!";
+let clickMessage = "Click on all the images, but don't click on any of them more than once! Try and click 12 in a row! ";
 
 class App extends Component {
     
@@ -33,10 +33,10 @@ class App extends Component {
         if (clickedMatch[0].clicked){
 
             console.log ("Correct Guesses: " + correctGuesses);
-            console.log ("Best Score: " + bestScore);
+            console.log ("High Score: " + bestScore);
 
             correctGuesses = 0;
-            clickMessage = "Dang! You already clicked on that one! Now you have to start over!"
+            clickMessage = "You already clicked on that. START OVER!"
 
             for (let i = 0 ; i < matches.length ; i++){
                 matches[i].clicked = false;
@@ -55,7 +55,7 @@ class App extends Component {
             // increment the appropriate counter
             correctGuesses++;
             
-            clickMessage = "Great! You haven't click on that one yet! Keep going!";
+            clickMessage = "Nice! Keep going!";
 
             if (correctGuesses > bestScore){
                 bestScore = correctGuesses;
@@ -78,7 +78,7 @@ class App extends Component {
             correctGuesses = 0;
 
             // Egg on the user to play again
-            clickMessage = "WOW!!! You got ALL of them!!! Now, let's see if you can do it again!";
+            clickMessage = "You got ALL of them!!! Can do it again?";
             bestScore = 12;
             this.setState({ bestScore });
             
@@ -100,7 +100,7 @@ class App extends Component {
     render() {
         return (
             <Wrapper>
-                <Title>To boldly click where no one has clicked before!</Title>
+                <Title>Click A Character</Title>
         
                 <h3 className="scoreSummary">
                     {this.state.clickMessage}
@@ -109,7 +109,7 @@ class App extends Component {
                 <h3 className="scoreSummary">
                     Correct Guesses: {this.state.correctGuesses} 
                     <br />
-                    Best Score: {this.state.bestScore} 
+                    High Score: {this.state.bestScore} 
                 </h3>
 
                 {this.state.matches.map(match => (
