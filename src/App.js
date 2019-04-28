@@ -3,7 +3,7 @@ import GameCard from "./components/GameCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import matches from "./Cards.json";
-
+//import all necessary dependencies
 
 
 let correctGuesses = 0;
@@ -28,8 +28,8 @@ class App extends Component {
         // Filter for the clicked match
         const clickedMatch = matches.filter(match => match.id === id);
 
-        // If the matched image's clicked value is already true, 
-        // do the game over actions
+        // If the image's clicked value is already true, 
+        // start the game over again
         if (clickedMatch[0].clicked){
 
             console.log ("Correct Guesses: " + correctGuesses);
@@ -54,7 +54,7 @@ class App extends Component {
 
             // increment the appropriate counter
             correctGuesses++;
-            
+            //continuous message
             clickMessage = "Nice! Keep going!";
 
             if (correctGuesses > bestScore){
@@ -71,13 +71,13 @@ class App extends Component {
             this.setState({clickMessage});
         } else {
 
-            // Set its value to true
+            
             clickedMatch[0].clicked = true;
 
-            // restart the guess counter
+            // restarts the user guess counter
             correctGuesses = 0;
 
-            // Egg on the user to play again
+           //Restart
             clickMessage = "You got ALL of them!!! Can do it again?";
             bestScore = 12;
             this.setState({ bestScore });
