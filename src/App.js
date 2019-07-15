@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import GameCard from "./components/GameCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
+import Jumbotron from "./components/Jumbotron"
 import matches from "./Cards.json";
 //import all necessary dependencies
 
@@ -12,7 +13,7 @@ let clickMessage = "Click on all the images, but don't click on any of them more
 
 class App extends Component {
     
-    // Setting this.state.matches to the matches json array
+    // Setting this.state.matches to the matches json array, sets intial state of "let" variables, use let because they are subject to change
     state = {
         matches,
         correctGuesses,
@@ -20,7 +21,7 @@ class App extends Component {
         clickMessage
     };
 
-    setClicked = id => {
+    setClicked = (id) => {
 
         // Make a copy of the state matches array to work with
         const matches = this.state.matches;
@@ -99,19 +100,31 @@ class App extends Component {
 
     render() {
         return (
-            <Wrapper>
-                <Title>Click A Character</Title>
-        
-                <h3 className="scoreSummary">
-                    {this.state.clickMessage}
-                </h3>
+            <Wrapper >
+            
+                <div style={{textAlign: "center", margin: -25}}>
                 
-                <h3 className="scoreSummary">
+                <Title ><h2>Fantasy Click Game</h2>
+        
+                </Title>
+        
+                <h2 className="scoreSummary">
+                    {this.state.clickMessage}
+                </h2>
+                
+                <h2 className="scoreSummary">
                     Correct Guesses: {this.state.correctGuesses} 
                     <br />
                     High Score: {this.state.bestScore} 
-                </h3>
+                </h2>
+                
+                </div>
+           
 
+              
+                
+            
+              <div>
                 {this.state.matches.map(match => (
                     <GameCard
                         setClicked={this.setClicked}
@@ -120,7 +133,10 @@ class App extends Component {
                         image={match.image}
                     />
                 ))}
-            </Wrapper>
+                
+                </div>
+                </Wrapper>
+           
         );
     }
 }
